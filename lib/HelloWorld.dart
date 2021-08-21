@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:kelas12rplflutterpractice/MainMenu.dart';
 
 class HelloWorld extends StatefulWidget {
   const HelloWorld({Key key}) : super(key: key);
@@ -52,6 +53,7 @@ class _HelloWorldState extends State<HelloWorld> {
                   width: MediaQuery.of(context).size.width * 0.9,
                   margin: EdgeInsets.only(left: 20 , top: 15),
                   child: ElevatedButton(
+
                       style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(Colors.green),
                           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -59,7 +61,12 @@ class _HelloWorldState extends State<HelloWorld> {
                           )
                       ),
                       onPressed: () {
-                  }, child: Text("Login as Aji", style: TextStyle(color: Colors.white),)),
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MainMenu()),
+                        );
+                      },
+                      child: Text("Login as Aji", style: TextStyle(color: Colors.white),)),
                 )
               ],
             ),
